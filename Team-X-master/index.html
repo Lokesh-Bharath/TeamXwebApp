@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Team X</title>
+        <meta charset="UTF-8">
+        <!-- Auto refresh turned off as that caused some problems - LB -->        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="indexstyles.css">
+    </head>
+    <body>
+        <div class="login_box">
+            <div class="form">
+                <form class="login_form">
+                    <!-- Autocomplete was added as browser was warning - LB -->
+                    <input type="text" name="username" placeholder="Username" autocomplete = "username"><br>
+                    <input type="password" name="password" placeholder="Password" autocomplete="current-password"><br>
+                    <button type="submit">Submit</button>
+                    <p class="message">Not registered? <a href='#'>Register</a></p>
+                </form>
+                <form class="signup_form">
+                    <!-- A dialogue box must be added when password parameters dont match - LB -->
+                    <!-- Take the email failure dialogue box as reference - LB -->
+                    <input type="text" name="fullname" placeholder="Full Name" autocomplete = "name"><br>
+                    <input type="email" name="email" placeholder="E-mail" autocomplete="email"><br>
+                    <input type="password" name="pwd" placeholder="Password" autocomplete="new-password"> <br>
+                     <button type="submit" name="register">Create account</button>
+                    <p class="message">Already Registered? <a href='#'>Login</a></p>
+                </form>
+            </div>
+        </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase.js"
+                src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"
+                 src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDyHaVjHObIUJOz2SwR91MwJ9dddlZMiUA",
+            authDomain: "theunknowndeveloper-261bb.firebaseapp.com",
+            databaseURL: "https://theunknowndeveloper-261bb.firebaseio.com",
+            projectId: "theunknowndeveloper-261bb",
+            storageBucket: "theunknowndeveloper-261bb.appspot.com",
+            messagingSenderId: "896862963188",
+            appId: "1:896862963188:web:571259619d1caf26d065a1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script src = "signup.js"> </script>
+        <script>
+            $('.message a').click(function(){
+            $('form').animate({height: "toggle", opacity: "toggle"}, "fast");
+            });
+        </script>
+        
+
+    </body>
+</html>
